@@ -1,1 +1,1 @@
-# number_theory_algorthims
+# moon math algorithms
