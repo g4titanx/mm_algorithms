@@ -1,5 +1,5 @@
 //algorithm 1 - Extended Euclidean Algorithm
-pub fn EEA(a: i32, b: i32) -> (i32, i32, i32) {
+pub fn eea(a: i64, b: i64) -> (i64, i64, i64) {
     let (mut u, mut g, mut x, mut y) = (1, a, 0, b);
 
     while y != 0 {
@@ -17,8 +17,10 @@ pub fn EEA(a: i32, b: i32) -> (i32, i32, i32) {
     (g, u, v)
 }
 
+#[allow(unused_variables)] 
+#[allow(non_snake_case)]
 //algorithm 2 - Chinese Remainder Theorem
-pub fn CRT(a: &[i64], n: &[i64]) -> i64 { 
+pub fn crt(a: &[i64], n: &[i64]) -> i64 { 
     let k = a.len();
     let mut N = 1;
     for &n_i in n {
@@ -28,7 +30,7 @@ pub fn CRT(a: &[i64], n: &[i64]) -> i64 {
     let mut x = 0;
     for j in 0..k {
         let N_j = N / n[j];
-        let (_, s_j, t_j) = EEA(N_j, n[j]);
+        let (_, s_j, t_j) = eea(N_j, n[j]);
         x += a[j] * s_j * N_j;
     }
 
