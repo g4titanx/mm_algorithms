@@ -2,7 +2,7 @@ use std::ops::{Add, Sub, Mul};
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Polynomial {
-    coeffs: Vec<f64>,
+    pub coeffs: Vec<f64>,
 }
 
 impl Polynomial {
@@ -27,10 +27,12 @@ impl Polynomial {
     }
 
     //Horner's Method for evaluating polynomials
+    #[allow(unused)]
     pub fn evaluate(&self, x: f64) -> f64 {
         self.coeffs.iter().rev().fold(0.0, |acc, &coeff| acc * x + coeff)
     }
 
+    #[allow(unused)]
     pub fn multiply_by_constant(self, constant: f64) -> Self {
         let coeffs = self.coeffs.into_iter().map(|c| c * constant).collect();
         Polynomial::new(coeffs)
