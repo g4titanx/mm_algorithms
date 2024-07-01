@@ -25,6 +25,16 @@ impl Polynomial {
             self.coeffs.pop();
         }
     }
+
+    //Horner's Method for evaluating polynomials
+    pub fn evaluate(&self, x: f64) -> f64 {
+        self.coeffs.iter().rev().fold(0.0, |acc, &coeff| acc * x + coeff)
+    }
+
+    pub fn multiply_by_constant(self, constant: f64) -> Self {
+        let coeffs = self.coeffs.into_iter().map(|c| c * constant).collect();
+        Polynomial::new(coeffs)
+    }
 }
 
 
