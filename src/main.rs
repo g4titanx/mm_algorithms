@@ -5,5 +5,5 @@ fn main() {
     let n = vec![7, 3, 5, 11]; //example values for n
 
     let result = crt(&a, &n);
-    println!("The solution is: {}", result);
+    println!("{}", result);
 }

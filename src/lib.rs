@@ -1,3 +1,5 @@
+mod polynomial;
+
 //algorithm 1 - Extended Euclidean Algorithm
 pub fn eea(a: i64, b: i64) -> (i64, i64, i64) {
     let (mut u, mut g, mut x, mut y) = (1, a, 0, b);
@@ -35,4 +37,17 @@ pub fn crt(a: &[i64], n: &[i64]) -> i64 {
     }
 
     x % N
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_crt () {
+        let a = vec![4, 1, 3, 0];
+        let n = vec![7, 3, 5, 11];
+        let result = crt(&a, &n);
+        assert_eq!(result, 88);
+    }
 }
