@@ -1,4 +1,5 @@
 use std::ops::{Add, Sub, Mul};
+
 #[derive(Debug, Clone, PartialEq)]
 pub struct Polynomial {
     coeffs: Vec<f64>,
