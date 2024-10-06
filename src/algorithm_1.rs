@@ -14,6 +14,7 @@ pub fn eea(a: i64, b: i64) -> (i64, i64, i64) {
     }
 
     let v = (g - a * u) / b;
+    // (gcd(a,b), s, t): gcd(a,b) == u.a + v.b
     (g, u, v)
 }
 
