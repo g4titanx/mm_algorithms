@@ -18,6 +18,20 @@ pub fn eea(a: i64, b: i64) -> (i64, i64, i64) {
     (g, u, v)
 }
 
+// same algo can be achieved with this loop
+fn euclid_algo(mut m: i64, mut n: i64) -> i64 {
+    loop {
+        let r = m % n;
+        if r == 0 {
+            break n
+        } else {
+            m = n;
+            n = r;
+            continue
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
